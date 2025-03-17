@@ -17,7 +17,14 @@ import spacy
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer, util
 
-nlp = spacy.load("de_core_news_sm")
+import spacy
+try:
+    nlp = spacy.load("de_core_news_sm")
+except OSError:
+    from spacy.cli import download
+    download("de_core_news_sm")
+    nlp = spacy.load("de_core_news_sm")
+
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 sentence_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
