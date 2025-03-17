@@ -9,6 +9,8 @@ import PyPDF2
 import docx
 import io
 import base64
+import os
+os.system("python -m spacy download de_core_news_sm")
 
 # Load NLP models
 import spacy
