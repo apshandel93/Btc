@@ -1,0 +1,10 @@
+streamlit
+pandas
+requests
+spacy
+transformers
+sentence-transformers
+geopy
+plotly
+PyPDF2
+python-docx
